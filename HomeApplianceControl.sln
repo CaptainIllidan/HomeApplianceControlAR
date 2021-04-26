@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeApplianceControl", "HomeApplianceControl\HomeApplianceControl.csproj", "{84701582-66C0-448D-ACBC-F80CB9255C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeApplianceControl.Domain", "HomeApplianceControl.Domain\HomeApplianceControl.Domain.csproj", "{722B511D-3850-42A4-A258-63374AA99E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeApplianceControl.Common", "HomeApplianceControl.Common\HomeApplianceControl.Common.csproj", "{5116BB22-8A9D-464C-8997-C22BC2FF32DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeApplianceControl.Contracts", "HomeApplianceControl.Contracts\HomeApplianceControl.Contracts.csproj", "{57749978-80E3-4C5E-B218-BE6EE996549D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84701582-66C0-448D-ACBC-F80CB9255C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84701582-66C0-448D-ACBC-F80CB9255C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84701582-66C0-448D-ACBC-F80CB9255C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84701582-66C0-448D-ACBC-F80CB9255C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722B511D-3850-42A4-A258-63374AA99E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722B511D-3850-42A4-A258-63374AA99E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722B511D-3850-42A4-A258-63374AA99E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722B511D-3850-42A4-A258-63374AA99E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5116BB22-8A9D-464C-8997-C22BC2FF32DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5116BB22-8A9D-464C-8997-C22BC2FF32DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5116BB22-8A9D-464C-8997-C22BC2FF32DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5116BB22-8A9D-464C-8997-C22BC2FF32DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57749978-80E3-4C5E-B218-BE6EE996549D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57749978-80E3-4C5E-B218-BE6EE996549D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57749978-80E3-4C5E-B218-BE6EE996549D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57749978-80E3-4C5E-B218-BE6EE996549D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA79640D-40B0-4708-A094-B8BA63E85260}
+	EndGlobalSection
+EndGlobal

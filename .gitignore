@@ -1,0 +1,16 @@
+#Visual Studio
+bin/
+obj/
+.vs/
+Debug/
+Release/
+*.suo
+*.user
+*.vsmdi
+*.ncb
+*.sln.cahce
+
+#Resharper
+_resharper.*/
+
+*.dotcover
