@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeApplianceControl.Domain.DAL;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HomeApplianceControl
 {
@@ -13,7 +15,9 @@ namespace HomeApplianceControl
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            CreateDbIfNotExists(host);
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +26,23 @@ namespace HomeApplianceControl
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static void CreateDbIfNotExists(IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<HomeApplianceControlContext>();
+                    DbInitializer.Initialize(context);
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                }
+            }
+        }
     }
 }

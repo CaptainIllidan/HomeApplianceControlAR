@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HomeApplianceControl.Common;
+using HomeApplianceControl.Common.LgCallerHelper;
 using HomeApplianceControl.Common.Settings;
 using HomeApplianceControl.Domain.DAL;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +44,8 @@ namespace HomeApplianceControl
 
             services.AddDbContext<HomeApplianceControlContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<ILgCallerHelper, LgCallerHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

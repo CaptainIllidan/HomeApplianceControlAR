@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
@@ -15,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HomeApplianceControl.Common\HomeApplianceControl.Common.csproj" />
+    <ProjectReference Include="..\HomeApplianceControl.Contracts\HomeApplianceControl.Contracts.csproj" />
     <ProjectReference Include="..\HomeApplianceControl.Domain\HomeApplianceControl.Domain.csproj" />
   </ItemGroup>
 
