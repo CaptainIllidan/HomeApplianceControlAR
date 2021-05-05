@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HomeAppliance.Converters\HomeApplianceControl.Converters.csproj" />
     <ProjectReference Include="..\HomeApplianceControl.Common\HomeApplianceControl.Common.csproj" />
     <ProjectReference Include="..\HomeApplianceControl.Contracts\HomeApplianceControl.Contracts.csproj" />
     <ProjectReference Include="..\HomeApplianceControl.Domain\HomeApplianceControl.Domain.csproj" />

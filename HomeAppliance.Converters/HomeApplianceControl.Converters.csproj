@@ -5,10 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\HomeApplianceControl.Common\HomeApplianceControl.Common.csproj" />
+    <ProjectReference Include="..\HomeApplianceControl.Contracts\HomeApplianceControl.Contracts.csproj" />
     <ProjectReference Include="..\HomeApplianceControl.Domain\HomeApplianceControl.Domain.csproj" />
   </ItemGroup>
 

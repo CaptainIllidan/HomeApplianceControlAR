@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using HomeApplianceControl.Domain.BO;
 
 namespace HomeApplianceControl.Contracts
 {
@@ -8,5 +9,9 @@ namespace HomeApplianceControl.Contracts
     {
         [DataMember]
         public Guid Id { get; set; }
+
+        public virtual DeviceType DeviceType { get; set; }
+
+        public virtual IntegrationType IntegrationType { get; set; }
     }
 }

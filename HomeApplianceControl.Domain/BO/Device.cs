@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace HomeApplianceControl.Domain.BO
 {
@@ -21,7 +23,9 @@ namespace HomeApplianceControl.Domain.BO
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual Guid Id { get; set; }
+
         public virtual DeviceType DeviceType { get; set; }
+
         public virtual IntegrationType IntegrationType { get; set; }
     }
 }

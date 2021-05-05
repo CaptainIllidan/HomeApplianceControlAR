@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeApplianceControl.Common;
 using HomeApplianceControl.Common.LgCallerHelper;
 using HomeApplianceControl.Contracts;
 using HomeApplianceControl.Domain.DAL;
@@ -28,13 +29,13 @@ namespace HomeApplianceControl.Controllers
         [HttpGet]
         public Device Get(Guid id)
         {
-            return GetDeviceInternal(id, Assertion.Exist);
+            return DeviceHelper.GetDeviceInternal(context, id, DeviceHelper.Assertion.Exist);
         }
 
         [HttpPost]
         public Device Post(Device device)
         {
-            GetDeviceInternal(device.Id, Assertion.NotExist);
+            DeviceHelper.GetDeviceInternal(context, device.Id, DeviceHelper.Assertion.NotExist);
             var deviceDal = context.Devices.Add(device)?.Entity;
             context.SaveChanges();
             return deviceDal;
@@ -43,7 +44,7 @@ namespace HomeApplianceControl.Controllers
         [HttpPut]
         public Device Put(Device device)
         {
-            var deviceDal = GetDeviceInternal(device.Id, Assertion.Exist);
+            var deviceDal = DeviceHelper.GetDeviceInternal(context, device.Id, DeviceHelper.Assertion.Exist);
             deviceDal.DeviceType = device.DeviceType;
             deviceDal.IntegrationType = device.IntegrationType;
             context.Devices.Update(deviceDal);
@@ -54,39 +55,11 @@ namespace HomeApplianceControl.Controllers
         [HttpDelete]
         public void Delete(Guid deviceId)
         {
-            var device = GetDeviceInternal(deviceId, Assertion.Exist);
+            var device = DeviceHelper.GetDeviceInternal(context, deviceId, DeviceHelper.Assertion.Exist);
             context.Devices.Remove(device);
             context.SaveChanges();
         }
 
-        private Device GetDeviceInternal(Guid deviceId, Assertion assertion)
-        {
-            var device = context.Devices.SingleOrDefault(d => d.Id == deviceId);
-            Assert(device, assertion);
-            return device;
-        }
-
-        private void Assert(Device device, Assertion assertion)
-        {
-            switch (assertion)
-            {
-                case Assertion.Exist:
-                    if (device == null)
-                        throw new ApplicationException("Device not found");
-                    break;
-                case Assertion.NotExist:
-                    if (device != null)
-                        throw new ApplicationException($"Device with id [{device.Id}] already exist");
-                    break;
-                default:
-                    throw new ArgumentException($"Unsupported assertion {assertion.GetType()}:{assertion}");
-            }
-        }
-
-        private enum Assertion
-        {
-            Exist = 0,
-            NotExist = 1,
-        }
+        
     }
 }
