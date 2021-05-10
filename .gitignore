@@ -14,3 +14,23 @@ Release/
 _resharper.*/
 
 *.dotcover
+
+#Android
+*.apk
+SharedCache/
+Artifacts/
+Library/
+Logs/
+
+#ThirdParty
+.coverage
+.tox
+dist/
+wideq_state.json
+__pycache__
+.vscode/
+bin/
+var/
+vendor/
+# Ignore Mac system files
+.DS_Store
